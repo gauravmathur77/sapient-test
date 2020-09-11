@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
-    "start": "ng build --prod && node dist/server/main.js",
+    "start": "ng build --prod && node dist/angular-starter/server/main.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
