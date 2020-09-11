@@ -3,8 +3,8 @@
   "version": "10.0.14",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
     "build": "ng build",
+    "start": "ng build --prod && node dist/server/main.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
