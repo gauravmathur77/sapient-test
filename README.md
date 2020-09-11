@@ -35,9 +35,3 @@ What do you need to run this app:
 * `npm run serve:ssr`
 * in your browser [http://localhost:4000](http://localhost:4000) 
 
-### Use Chrome version 85 min !!!!
-
-## Tests
-* `npm run lint`
-* `npm run test`
-* `npm run e2e`
