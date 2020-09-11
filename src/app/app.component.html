@@ -1,0 +1,26 @@
+<div class="app">
+
+  <header>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark " style="background-color: #212121;">
+      <a class="navbar-brand" routerLink="/">
+        <span class="mr-1" style="color:white">Space X Programs</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="text-center text-white">&copy;Developer - Gaurav</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ngx-ui-loader></ngx-ui-loader>

@@ -1,0 +1,76 @@
+<div class="row pt-1 mb-2">
+  <div class="col-md-2 text-center mb-2">
+    <h1 class="h5">
+      Filters
+    </h1>
+    <ng-container *ngFor="let year of launchYear; let i = index">
+      <ng-container *ngIf="(i%2 == 0)">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <a [ngClass]="(filters.launch_year == year) ? 'selected':''" (click)="filter(year, 'year')" class="btn btn-primary btn-md filter-button">{{year}}</a>
+            <ng-container *ngIf="launchYear[i+1]">
+              <a [ngClass]="(filters.launch_year == launchYear[i+1]) ? 'selected':''"  (click)="filter(launchYear[i+1], 'year')" class="btn btn-primary btn-md filter-button">{{launchYear[i+1]}}</a>
+            </ng-container>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <h1 class="h5">
+      Successful Launch
+    </h1>
+    <ng-container *ngFor="let condition of landing; let i = index">
+      <ng-container *ngIf="(i%2 == 0)">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <a [ngClass]="(filters.launch_success) ? 'selected':''" (click)="filter(condition, 'launch')"  class="btn btn-primary btn-md filter-button">{{condition}}</a>
+            <a [ngClass]="(filters && (filters.launch_success == false)) ? 'selected':''" (click)="filter(landing[i+1], 'launch')" class="btn btn-primary btn-md filter-button">{{landing[i+1]}}</a>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <h1 class="h5">
+      Successful Landing
+    </h1>
+    <ng-container *ngFor="let condition of landing; let i = index">
+      <ng-container *ngIf="(i%2 == 0)">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <a [ngClass]="(filters.land_success) ? 'selected':''" (click)="filter(condition, 'landing')" class="btn btn-primary btn-md filter-button">{{condition}}</a>
+            <a [ngClass]="(filters && (filters.land_success == false)) ? 'selected':''" (click)="filter(landing[i+1], 'landing')" class="btn btn-primary btn-md filter-button">{{landing[i+1]}}</a>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="col-md-10 text-center mb-2">
+
+    <div class="row" *ngIf="spaceX && spaceX.length > 0; else showMessage">
+      <ng-container *ngFor="let item of spaceX">
+        <div class="card col-md-3">
+          <img class="card-img-top" [src]="item.links.mission_patch" alt="Card image cap">
+          <div class="card-body">
+
+            <span class="card-text"><b>Mission ID: </b></span>
+            <ul>
+              <ng-container *ngFor="let mission of item.mission_id">
+
+                <li class="text-left">{{mission}}</li>
+              </ng-container>
+            </ul>
+            
+            <p class="card-text"><b>Launch Year: </b> {{item.launch_year}}</p>
+            
+            <p class="card-text"><b>Successful Launch: </b> {{(item.launch_success) ? 'True' : 'False'}}</p>
+            
+            <p class="card-text"><b>Successful Landing: </b> {{(item.rocket.first_stage.cores[0].land_success) ? 'True':  'False'}}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <ng-template #showMessage>
+      No listing available
+    </ng-template>
+  </div>
+</div>

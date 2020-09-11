@@ -1,0 +1,15 @@
+.app main, .app footer {
+  padding-left: 1rem;
+}
+
+.footer {
+  background: #3F729B;
+  padding: 2em;
+  position: fixed;
+  height: 0px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
