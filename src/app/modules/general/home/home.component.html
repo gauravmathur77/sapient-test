@@ -23,8 +23,8 @@
       <ng-container *ngIf="(i%2 == 0)">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <a [ngClass]="(filters.launch_success) ? 'selected':''" (click)="filter(condition, 'launch')"  class="btn btn-primary btn-md filter-button">{{condition}}</a>
-            <a [ngClass]="(filters && (filters.launch_success == false)) ? 'selected':''" (click)="filter(landing[i+1], 'launch')" class="btn btn-primary btn-md filter-button">{{landing[i+1]}}</a>
+            <a [ngClass]="(filters.launch_success == 'true' || filters.launch_success == true) ? 'selected':''" (click)="filter(condition, 'launch')"  class="btn btn-primary btn-md filter-button">{{condition}}</a>
+            <a [ngClass]="(filters.launch_success == false || filters.launch_success == 'false') ? 'selected':''" (click)="filter(landing[i+1], 'launch')" class="btn btn-primary btn-md filter-button">{{landing[i+1]}}</a>
           </div>
         </div>
       </ng-container>
@@ -37,8 +37,8 @@
       <ng-container *ngIf="(i%2 == 0)">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <a [ngClass]="(filters.land_success) ? 'selected':''" (click)="filter(condition, 'landing')" class="btn btn-primary btn-md filter-button">{{condition}}</a>
-            <a [ngClass]="(filters && (filters.land_success == false)) ? 'selected':''" (click)="filter(landing[i+1], 'landing')" class="btn btn-primary btn-md filter-button">{{landing[i+1]}}</a>
+            <a [ngClass]="(filters.land_success == 'true' || filters.land_success == true) ? 'selected':''" (click)="filter(condition, 'landing')" class="btn btn-primary btn-md filter-button">{{condition}}</a>
+            <a [ngClass]="(filters.land_success == false || filters.land_success == 'false')  ? 'selected':''" (click)="filter(landing[i+1], 'landing')" class="btn btn-primary btn-md filter-button">{{landing[i+1]}}</a>
           </div>
         </div>
       </ng-container>

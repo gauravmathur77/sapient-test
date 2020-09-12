@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
+ 
 
 import { HomeService } from '../services/home.service';
 
@@ -20,11 +22,23 @@ export class HomeComponent implements OnInit {
   url = 'https://api.spacexdata.com/v3/launches?limit=100';
   
 
-  constructor(private homeService: HomeService) {
+  constructor(private homeService: HomeService,
+    private router:Router,
+    private activatedRoute: ActivatedRoute) {
+      this.activatedRoute.queryParams.subscribe(params => {
+        Object.keys(params).forEach((key)=>{
+          this.filters[key] = params[key];
+        })
+    });
+    
   }
 
   ngOnInit() {
-    this.getAllData(this.url);
+    if(Object.keys(this.filters).length > 0) {
+      this.fetchDataFromFilter();
+    } else {
+      this.getAllData(this.url);
+    }
   }
 
   getAllData(url) {
@@ -44,14 +58,23 @@ export class HomeComponent implements OnInit {
     if (type == 'landing') {
       this.filters['land_success'] = (event == 'True') ? true : false;
     }
-    let string = `${this.url}?`;
+
+    this.router.navigate([''],  { queryParams: this.filters });
+    this.fetchDataFromFilter();
+  }
+
+  fetchDataFromFilter() {
+    let string = '';
+    if(Object.keys(this.filters).length > 0) {
+      string = `${this.url}&`
+    } else {
+      string = `${this.url}`
+    }
     Object.keys(this.filters).forEach((key) => {
-      if (Object.keys(this.filters).length > 1) {
-
-        string = string + '&' + key + '=' + this.filters[key];
+      if(string.endsWith('&')) {
+        string = string  + key + '=' + this.filters[key];
       } else {
-
-        string = string + key + '=' + this.filters[key];
+        string = string + '&' + key + '=' + this.filters[key];
       }
     })
     this.getAllData(string);
