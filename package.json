@@ -12,8 +12,8 @@
     "serve:ssr": "node dist/angular-starter/server/main.js",
     "build:ssr": "ng build --prod && ng run angular-starter:server:production",
     "prerender": "ng run angular-starter:prerender",
-    "start:heroku":"node dist/angular-starter/server/main.js",
-    "postinstall":"npm run build:ssr" 
+    "start:heroku": "node dist/angular-starter/server/main.js",
+    "postinstall": "npm run build:ssr"
   },
   "engines": {
     "node": "12.18.1",

@@ -19,8 +19,27 @@
 
 .filter-button {
   margin: 5px;
+  background-color: #36c23b;
+  border-color: #36c23b;
 }
 
 .selected {
   background-color: brown;
+}
+
+h6 {
+  text-decoration: underline;
+}
+
+ .card {
+  background-color: white;
+}
+
+.rockets {
+  margin-left: 10px;
+}
+
+.card-img-top {
+  background-color: #8080804f;
+  margin: 5px;
 }
