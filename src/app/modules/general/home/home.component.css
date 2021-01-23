@@ -42,4 +42,6 @@ h6 {
 .card-img-top {
   background-color: #8080804f;
   margin: 5px;
+  width: 250px;
+  height: 250px;
 }
