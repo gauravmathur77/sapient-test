@@ -59,7 +59,9 @@
           "./browser/index.html",
           "./browser/manifest.webmanifest",
           "./browser/*.css",
-          "./browser/*.js"
+          "./browser/*.js",
+          "./browser/*.br",
+          "./browser/*.gz"
         ]
       }
     },

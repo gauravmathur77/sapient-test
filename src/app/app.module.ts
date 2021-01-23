@@ -42,7 +42,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       showForeground: true
     }),
      NgxPictureModule.forRoot(CLOUDINARY_CONFIG),
-     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' })
+    //  ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' })
   ],
   providers: [],
   bootstrap: [AppComponent]

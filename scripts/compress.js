@@ -10,6 +10,7 @@ const ora = require('ora');
 // configure input, output and processors:
 
 const inputDir = `${__dirname}/../dist/angular-starter/server/`;
+console.log(inputDir)
 const outputDir = inputDir;
 let fileStream = () => gulp.src([
     `${inputDir}**/*.*`,

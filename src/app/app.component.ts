@@ -11,19 +11,19 @@ export class AppComponent  implements OnInit{
   title = 'angular-starter';
   version = 'Angular version 10.0.9';
 
-  constructor(private swUpdate: SwUpdate) {
+  constructor() {
   }
   ngOnInit() {
 
-    if (this.swUpdate.isEnabled) {
+    // if (this.swUpdate.isEnabled) {
 
-        this.swUpdate.available.subscribe(() => {
+    //     this.swUpdate.available.subscribe(() => {
 
-            if(confirm("New version available. Load New Version?")) {
+    //         if(confirm("New version available. Load New Version?")) {
 
-                window.location.reload();
-            }
-        });
-    }        
+    //             window.location.reload();
+    //         }
+    //     });
+    // }        
 }
 }
