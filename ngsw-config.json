@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "name": "angular-starter",
   "short_name": "angular-starter",
   "theme_color": "#1976d2",
@@ -57,10 +56,10 @@
       "resources": {
         "files": [
           "favicon.ico",
-          "src/index.html",
-          "manifest.webmanifest",
-          "/src/*.css",
-          "/dist/*.js"
+          "./browser/index.html",
+          "./browser/manifest.webmanifest",
+          "./browser/*.css",
+          "./browser/*.js"
         ]
       }
     },
@@ -70,7 +69,7 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "dist/browser/assets/**",
+          "./browser/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
