@@ -8,6 +8,7 @@ import { HomeComponent } from './modules/general/home/home.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule, NgxUiLoaderConfig, POSITION, PB_DIRECTION, SPINNER } from 'ngx-ui-loader';
+import { CLOUDINARY_CONFIG, NgxPictureModule } from 'ngx-picture';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsOpacity: 0.5,
@@ -37,7 +38,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderHttpModule.forRoot({
       exclude: [],
       showForeground: true
-    })
+    }),
+     NgxPictureModule.forRoot(CLOUDINARY_CONFIG)
   ],
   providers: [],
   bootstrap: [AppComponent]

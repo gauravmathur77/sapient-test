@@ -52,7 +52,13 @@
     <div class="row" *ngIf="spaceX && spaceX.length > 0; else showMessage">
       <ng-container *ngFor="let item of spaceX">
         <div class="card col-md-3">
-          <img class="card-img-top" [src]="(item.links.mission_patch) ? item.links.mission_patch  : './assets/images/not-found.png'" alt="Card image cap">
+          <!-- <img class="" > -->
+          <ngx-picture
+            [src]="(item.links.mission_patch) ? item.links.mission_patch  : './assets/images/not-found.png'" 
+            alt="Card image cap"
+            class="card-img-top"
+            [lazyLoad]="true"
+          ></ngx-picture>
           <div class="card-body">
 
             <span class="card-text"><b>Mission ID: </b></span>
