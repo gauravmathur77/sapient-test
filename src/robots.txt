@@ -1,4 +1,3 @@
-User-agent: *
-Disallow:
-Disallow: /cgi-bin/
-Sitemap: https://sapient-project-gaurav.herokuapp.com/sitemap.xml
+User-Agent: *
+Allow: /
+
