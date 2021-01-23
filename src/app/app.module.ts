@@ -36,13 +36,13 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AppRoutingModule,
     HttpClientModule,
     NgxUiLoaderModule,
-    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    // NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderHttpModule.forRoot({
       exclude: [],
       showForeground: true
     }),
      NgxPictureModule.forRoot(CLOUDINARY_CONFIG),
-     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' })
   ],
   providers: [],
   bootstrap: [AppComponent]

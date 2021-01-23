@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "name": "angular-starter",
   "short_name": "angular-starter",
   "theme_color": "#1976d2",
