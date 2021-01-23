@@ -9,6 +9,8 @@ import { HomeComponent } from './modules/general/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule, NgxUiLoaderConfig, POSITION, PB_DIRECTION, SPINNER } from 'ngx-ui-loader';
 import { CLOUDINARY_CONFIG, NgxPictureModule } from 'ngx-picture';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsOpacity: 0.5,
@@ -39,7 +41,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       exclude: [],
       showForeground: true
     }),
-     NgxPictureModule.forRoot(CLOUDINARY_CONFIG)
+     NgxPictureModule.forRoot(CLOUDINARY_CONFIG),
+     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
